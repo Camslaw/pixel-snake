@@ -6,6 +6,8 @@
 - **C++** - Core game logic and object-oriented design
 - **Qt** - GUI development and event handling
 - **CMake** - Build system for cross-platform compatibility
+- **vcpkg** – Dependency management for installing and integrating Qt
+
 
 ## Build Instructions (Coming Soon)
 
