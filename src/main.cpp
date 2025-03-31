@@ -1,8 +1,18 @@
 #include <iostream>
+#include <QApplication>
+#include <QMainWindow>
 
-int main()
+int main(int argc, char *argv[])
 {
     std::cout << "Welcome to Pixel Snake!" << '\n';
 
-    return 0;
+    QApplication a(argc, argv);
+    
+    QMainWindow window;
+    window.resize(800, 600);
+    window.setWindowTitle("Pixel Snake");
+    window.setStyleSheet("background-color: turquoise;");
+    window.show();
+
+    return a.exec();
 }
