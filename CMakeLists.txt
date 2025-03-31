@@ -12,3 +12,7 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
 
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
+
+if(MSVC)
+set_target_properties(PixelSnake PROPERTIES VS_DEBUGGER_ENVIRONMENT "QT_PLUGIN_PATH=${VCPKG_INSTALLED_DIR}/${VCPKG_TARGET_TRIPLET}/debug/Qt6/plugins")
+endif()

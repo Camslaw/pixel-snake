@@ -2,7 +2,16 @@
     "version": 6,
     "configurePresets": [
         {
-            "name": "default",
+            "name": "Windows",
+            "generator": "Visual Studio 17 2022",
+            "binaryDir": "${sourceDir}/build/default",
+            "toolchainFile": "${sourceDir}/vcpkg/scripts/buildsystems/vcpkg.cmake",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug"
+            }
+        },
+        {
+            "name": "MacOS",
             "generator": "Ninja",
             "binaryDir": "${sourceDir}/build/default",
             "toolchainFile": "${sourceDir}/vcpkg/scripts/buildsystems/vcpkg.cmake",
@@ -10,11 +19,16 @@
                 "CMAKE_BUILD_TYPE": "Debug"
             }
         }
+
     ],
     "buildPresets": [
         {
-            "name": "default",
-            "configurePreset": "default"
+            "name": "Windows-build",
+            "configurePreset": "Windows"
+        },
+        {
+            "name": "MacOS-build",
+            "configurePreset": "MacOS"
         }
     ]
 }

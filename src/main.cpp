@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
     
     QMainWindow window;
-    window.resize(800, 600);
+    window.resize(900, 700);
     window.setWindowTitle("Pixel Snake");
     window.setStyleSheet("background-color: turquoise;");
     window.show();
