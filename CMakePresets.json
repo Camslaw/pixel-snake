@@ -4,7 +4,7 @@
         {
             "name": "Windows",
             "generator": "Visual Studio 17 2022",
-            "binaryDir": "${sourceDir}/build/default",
+            "binaryDir": "${sourceDir}/build",
             "toolchainFile": "${sourceDir}/vcpkg/scripts/buildsystems/vcpkg.cmake",
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Debug"
@@ -13,7 +13,7 @@
         {
             "name": "MacOS",
             "generator": "Ninja",
-            "binaryDir": "${sourceDir}/build/default",
+            "binaryDir": "${sourceDir}/build",
             "toolchainFile": "${sourceDir}/vcpkg/scripts/buildsystems/vcpkg.cmake",
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Debug"
