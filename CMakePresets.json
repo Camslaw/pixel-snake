@@ -16,7 +16,9 @@
             "binaryDir": "${sourceDir}/build",
             "toolchainFile": "${sourceDir}/vcpkg/scripts/buildsystems/vcpkg.cmake",
             "cacheVariables": {
-                "CMAKE_BUILD_TYPE": "Debug"
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_MAKE_PROGRAM": "/opt/homebrew/bin/ninja",
+                "VCPKG_TARGET_TRIPLET": "arm64-osx-dynamic"
             }
         }
 
