@@ -1,12 +1,19 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include <QQmlContext>
+#include "GameController.h"
 
 int main(int argc, char *argv[])
 {
-    QGuiApplication app(argc, argv);
-    QQmlApplicationEngine engine;
-    engine.load(QUrl(QStringLiteral("qrc:/qml/main.qml")));
-    if (engine.rootObjects().isEmpty()) return -1;
+  QGuiApplication app(argc, argv);
 
-    return app.exec();
+  GameController controller;
+
+  QQmlApplicationEngine engine;
+  engine.rootContext()->setContextProperty("controller", &controller);
+
+  engine.load(QUrl(QStringLiteral("qrc:/qml/main.qml")));
+  if (engine.rootObjects().isEmpty()) return -1;
+
+  return app.exec();
 }

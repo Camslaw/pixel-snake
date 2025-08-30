@@ -1,8 +1,18 @@
 cmake_minimum_required(VERSION 3.28)
 
-project(PixelSnake LANGUAGES CXX)
+project(PixelSnake)
 
-add_executable(PixelSnake src/main.cpp)
+# Autogen (moc, rcc)
+set(CMAKE_AUTOMOC ON)
+# set(CMAKE_AUTORCC ON)
+set(CMAKE_AUTOUIC ON)
+
+add_executable(${PROJECT_NAME} 
+    src/main.cpp
+    src/GameController.cpp
+    src/GameController.h
+    qml/qml.qrc
+)
 
 find_package(Qt6 REQUIRED COMPONENTS Quick)
 
@@ -10,7 +20,7 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
     Qt6::Quick
 )
 
-qt_add_resources(PixelSnake "qml"
+qt_add_resources(${PROJECT_NAME} "qml"
         PREFIX "/"
         FILES qml/main.qml
 )
